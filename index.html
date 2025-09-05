@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple PWA</title>
+
+  <!-- Link manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#317EFB">
+
+  <script>
+    // Register service worker
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then(() => console.log("Service Worker Registered"));
+      });
+    }
+  </script>
+</head>
+<body>
+  <h1>Hello PWA 👋</h1>
+  <p>This is a simple Progressive Web App example.</p>
+</body>
+</html>
